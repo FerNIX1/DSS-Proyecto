@@ -1,0 +1,6 @@
+en este repo haremos todas las pruebas  
+aqui esta al login al 90%
+falta el admin el crud
+=============================================
+lo que vas a hacer es quitar todas las tbalas de la base de datos
+y luego pones :php artisan migrate y ya te va a garrar normalmente
