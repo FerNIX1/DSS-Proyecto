@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Cuentas;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +14,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $curso=new Cuentas();
+        $curso->monto="100.25";
+        $curso->TipoDeCuenta="Ahorro";
+        $curso->NumeroCuenta="2";
+        $curso->save();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $curso=new Cuentas();
+        $curso->monto="200.30";
+        $curso->TipoDeCuenta="Corriente";
+        $curso->NumeroCuenta="2";
+        $curso->save();
+
+        $curso=new Cuentas();
+        $curso->monto="800.30";
+        $curso->TipoDeCuenta="Ahorro";
+        $curso->NumeroCuenta="2";
+        $curso->save();
+        
     }
 }

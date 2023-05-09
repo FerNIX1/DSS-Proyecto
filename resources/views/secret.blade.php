@@ -8,7 +8,7 @@
     <title>Document</title>
     <style type="text/css">
 		body {
-			background-image: url(../img/WhatsApp\ Image\ 2023-04-29\ at\ 7.29.05\ PM.jpeg);
+			background-image: url(img/ciudad.jpeg);
 			background-size:auto;
 
 			background-repeat: no-repeat;
@@ -65,45 +65,47 @@
 	</style>
 </head>
 <body>
-	<?php
-	echo '<nav class="navbar navbar-expand-lg navbar-light bg-light">';
-	echo '<a class="navbar-brand" href="#">Banco de Agricultura</a>';
-
-	echo '</div>';
-	echo '</nav>';
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Banco de Agricultura</a>
+	</nav>
 	
-	echo '<div class="container mt-5" style="background:rgba(248, 249, 250,0.7); border-radius:10px; padding:50px; box-shadow:0px 2px 50px 10px black;">';
-	echo '<div class="row">';
-	echo '<div class="col-lg-6">';
-	echo '<h1 style="font-weight:bold;">Menu Cliente</h1>';
-	echo '<hr>';
-	echo '<div class="mb-3" style="opacity:1;">';
-	echo '<a href="crearCuentaCliente.php"><button class="btn  btn-block mb-2">Crear Cuenta</button></a>';
-	echo '<button class="btn btn-block mb-2" style="cursor:default;">Su saldo es:</button>';
-	echo '<button class="btn btn-block mb-2" style="cursor:default;">$00.00 </button>';
-    echo '<button type="button" class="btn btn-outline-primary me-2"><a href="' . route('logout') . '">Salir</a></button>';
-	echo '</div>';
-	echo '</div>';
-	echo '<div class="col-lg-6">';
-	echo '<div class="card">';
-	echo '<table class="table">';
-	echo '<thead>';
-	echo '<tr>';
-	echo '<th>Movimientos</th>';
-	echo '</tr>';
-	echo '</thead>';
-	echo '<tbody>';
-	echo '<tr>';
-	echo '<td>.</td>';
-	echo '</tr>';
+	<div class="container mt-5" style="background:rgba(248, 249, 250,0.7); border-radius:10px; padding:50px; box-shadow:0px 2px 50px 10px black;">
+		<div class="row">
+			<div class="col-lg-6">
+				<h1 style="font-weight:bold;">Menu Cliente:</h1>
+				<hr>
+				<div class="mb-3" style="opacity:1;">
+					<a href=""><button class="btn btn-block mb-2">Crear Cuenta</button></a>
+					<button class="btn btn-block mb-2" style="cursor:default;">Su saldo es:</button>
+					<button class="btn btn-block mb-2" style="cursor:default;">$00.00 </button>
+					<button type="button" class="btn btn-outline-primary me-2"><a href="{{ route('logout') }}">Salir</a></button>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="card">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Tipo de cuenta</th>
+								<th>Saldo</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach ($cuenta as $c)
+								<tr>
+									<td>{{ $c->id }}</td>
+									<td>{{ $c->TipoDeCuenta }}</td>
+									<td>{{ $c->monto }}</td>
+									<td>
+										<a href="">Ver</a>
+									</td>
+								</tr>
+							@endforeach
+						</tbody>
+					</table>
 
-	echo '</tbody>';
-	echo '</table>';
-	echo '</div>';
-	echo '</div>';
-	echo '</div>';
-	echo '</div>';	
-	?>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

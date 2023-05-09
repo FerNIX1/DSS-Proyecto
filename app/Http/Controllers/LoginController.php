@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cuentas;
 use Illuminate\Http\Request;
 // ========================================
 use App\Models\User;
@@ -52,36 +53,34 @@ class LoginController extends Controller
 
     }
 
-    public function login(Request $request){
+    public function login(Request $request) {
         //falta validar
         $credenciale1 =[
             "email"=>$request->email,
             "password" => $request->password,
             "tipousuario"=>'comun',
-            
         ];
         $credenciale2 =[
             "email"=>$request->email,
             "password" => $request->password,
             "tipousuario"=>'admin',
-            
         ];
-
+    
         $recordar = ($request->has('remember') ? true : false);
-       
-            if (Auth::attempt($credenciale1,$recordar)) {
-                $request->session()->regenerate();
-                return redirect()->intended(route('privada'));
-            
-            }else if(Auth::attempt($credenciale2,$recordar)){
-                $request->session()->regenerate();
-                return redirect()->intended(route('admin'));
-            }else{
-                return redirect('login');
-            }
-       
-     
+    
+        if (Auth::attempt($credenciale1,$recordar)) {
+            $request->session()->regenerate();
+            $user_id = Auth::id();
+            $cuentas = Cuentas::where('user_id', $user_id)->get();
+            return view('secret')->with('cuenta', $cuentas);
+        } else if(Auth::attempt($credenciale2,$recordar)){
+            $request->session()->regenerate();
+            return redirect()->intended(route('admin'));
+        } else {
+            return redirect('login');
+        }
     }
+
     public function logout(Request $request){
         Auth::logout();
 
