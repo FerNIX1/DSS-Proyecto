@@ -16,28 +16,25 @@
   <form method="POST" action="{{route('validar-registro')}}">
     @csrf
     <div class="mb-3">
-      <label for="nombre" class="form-label">Name</label>
+      <label for="nombre" class="form-label">Nombre: </label>
       <input type="text" class="form-control" id="nombre" name="name">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
       <input type="password" class="form-control" id="exampleInputPassword1" name="password">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">fecha</label>
+      <label for="exampleInputPassword1" class="form-label">Fecha de nacimiento:</label>
       <input type="date" class="form-control" id="exampleInputPassword1" name="fecha">
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <label for="exampleInputEmail1" class="form-label">Correo: </label>
       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
     </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Dui</label>
+      <label for="exampleInputPassword1" class="form-label">DUI:</label>
       <input type="text" class="form-control" id="exampleInputPassword1" name="dui">
     </div>
-  
-   
- 
     <button type="submit" class="btn btn-primary">Registrar</button>
   </form>
     </div>
