@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\cuentasController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -41,3 +42,5 @@ Route::post('/validar-registro',[LoginController::class,'register'])->name('vali
 Route::post('/inicia-sesion',[LoginController::class,'login'])->name('inicia-sesion');
 
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
+
+Route::get('/ver-cuenta/{id}',[cuentasController::class,'vercuenta'])->name('ver-cuenta');
