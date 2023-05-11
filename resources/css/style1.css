@@ -1,0 +1,52 @@
+
+*{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url(../views/img/1.jpeg);
+    background-size:auto;
+  }
+
+
+  form {
+    background:rgba(248, 249, 250,0.7);
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    width: 55%;
+    margin: 0 auto;
+    padding: 45px;  
+    box-shadow: 15px 25px 45px  #35444f;
+  }
+
+  label {
+    display: block;
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+
+  button[type="submit"] {
+    background-color: #336699;
+    color: white;
+    font-size: 17px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #2a5298;
+  }
+
