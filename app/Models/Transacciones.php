@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cuentas extends Model
+class Transacciones extends Model
 {
     use HasFactory;
-    public function transacciones()
+    public function cuenta()
     {
-       return $this->hasMany(Transacciones::class,"cuenta_id");
+        return $this->belongsTo(Cuentas::class);
     }
 }

@@ -10,7 +10,6 @@
 		body {
 			background-image: url(img/ciudad.jpeg);
 			background-size:auto;
-
 			background-repeat: no-repeat;
 			font-family: Arial, sans-serif;
 			color: #333;
@@ -99,7 +98,7 @@
 									<td>{{ $c->TipoDeCuenta }}</td>
 									<td>{{ $c->monto }}</td>
 									<td>
-										<a href="">Ver</a>
+										<a href="{{ route('ver-cuenta', ['id' => $c->id]) }}">Ver</a>
 									</td>
 								</tr>
 							@endforeach
