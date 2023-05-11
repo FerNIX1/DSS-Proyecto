@@ -10,6 +10,9 @@ class cuentasController extends Controller
     public function vercuenta(int $id)
 {
     $cuentas = Cuentas::where("user_id",$id)->get();
-    return view('cuentas', compact('cuentas'));
+    $transacciones=Transacciones::All();
+    //dd($transacciones);
+    //dd($cuentas);
+    return view('cuentas', compact('cuentas','transacciones'));
 }
 }

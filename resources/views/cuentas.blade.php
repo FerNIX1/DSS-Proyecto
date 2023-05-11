@@ -7,17 +7,42 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>cuentas</h1>
+    <h1>cuenta</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de cuenta</th>
+                <th>Saldo</th>
+            </tr>
+        </thead>
     <tbody>
         @foreach ($cuentas as $c)
-            <tr>
-                <td>{{ $c->id }}</td>
-                <td>{{ $c->TipoDeCuenta }}</td>
-                <td>{{ $c->monto }}</td>
-                <td>{{ $c->transacciones[0]->monto }}</td>
-            </tr>
-            
-        @endforeach
+        <tr>
+            <td>{{ $c->id }}</td>
+            <td>{{ $c->TipoDeCuenta }}</td>
+            <td>{{ $c->monto }}</td>
+        </tr>
+    @endforeach
     </tbody>
+    <table>
+        <h1>movimientos</h1>
+        <thead>
+            <tr>
+                <th>Acciones</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($transacciones as $t)
+                @if ($t->cuenta_id == $c->id)
+                    <tr>
+                        <td>{{ $t->tipo }}</td>
+                        <td>{{ $t->monto }}</td>
+                    </tr>
+                @endif
+            @endforeach
+        </tbody>
+    </table>
 </body>
 </html>
