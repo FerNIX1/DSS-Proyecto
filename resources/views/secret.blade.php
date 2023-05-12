@@ -19,7 +19,7 @@
 				<h1 style="font-weight:bold;">Menu Cliente:</h1>
 				<hr>
 				<div class="mb-3" style="opacity:1;">
-					<a href="#"><button class="btn btn-block mb-2">Crear Cuenta</button></a>
+					<a href="{{ route('Crearcuenta') }}"><button class="btn btn-block mb-2">Crear Cuenta</button></a>
 					<button class="btn btn-block mb-2" style="cursor:default;">Su saldo es:</button>
 					<button class="btn btn-block mb-2" id="btn-saldo" style="cursor:pointer;">$00.00 </button>
 					<button type="button" class="btn btn-outline-primary me-2"><a href="{{ route('logout') }}" style="color:white;">Salir</a></button>

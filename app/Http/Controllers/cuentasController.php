@@ -15,4 +15,9 @@ class cuentasController extends Controller
     //dd($cuentas);
     return view('cuentas', compact('cuentas','transacciones'));
 }
+
+ public function Crear_cuenta()
+{
+    return view('crearCuenta');
+}
 }
