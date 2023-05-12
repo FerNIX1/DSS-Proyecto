@@ -8,5 +8,21 @@
 </head>
 <body>
     <h1>crear cuenta</h1>
+     <label>
+        monto
+     </label>
+     <input type="text">
+     <label>
+        Tipo de cuenta 
+     </label>
+     <input type="text">
+     <label>
+        Numero Cuenta
+     </label>
+     <input type="text">
+     <label>
+        user id
+     </label>
+     <input type="text" name="" id="">
 </body>
 </html>

@@ -30,7 +30,7 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('privada'));
+        return redirect(route('login'));
         
 
     }
