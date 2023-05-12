@@ -29,6 +29,7 @@
         <h1>movimientos</h1>
         <thead>
             <tr>
+                <th>id_cuenta</th>
                 <th>Acciones</th>
                 <th>Cantidad</th>
             </tr>
@@ -37,6 +38,7 @@
             @foreach ($transacciones as $t)
                 @if ($t->cuenta_id == $c->id)
                     <tr>
+                        <td>{{ $t->cuenta_id}}</td>
                         <td>{{ $t->tipo }}</td>
                         <td>{{ $t->monto }}</td>
                     </tr>
