@@ -21,7 +21,7 @@
 				<div class="mb-3" style="opacity:1;">
 					<a href="#"><button class="btn btn-block mb-2">Crear Cuenta</button></a>
 					<button class="btn btn-block mb-2" style="cursor:default;">Su saldo es:</button>
-					<button class="btn btn-block mb-2" style="cursor:default;">$00.00 </button>
+					<button class="btn btn-block mb-2" id="btn-saldo" style="cursor:pointer;">$00.00 </button>
 					<button type="button" class="btn btn-outline-primary me-2"><a href="{{ route('logout') }}" style="color:white;">Salir</a></button>
 				</div>
 			</div>
@@ -38,10 +38,10 @@
 						</thead>
 						<tbody>
 							@foreach ($cuenta as $c)
-								<tr>
+								<tr style="cursor:pointer;">
 									<td>{{ $c->id }}</td>
 									<td>{{ $c->TipoDeCuenta }}</td>
-									<td>{{ $c->monto }}</td>
+									<td class="saldo">{{ $c->monto }}</td>
 									<td>
 										<a href="{{ route('ver-cuenta', ['id' => $c->id]) }}">Ver</a>
 									</td>
@@ -53,5 +53,17 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        // Capturar el evento hover en la tabla
+        $('table').on('mouseover', 'tbody tr', function() {
+            // Obtener el saldo de la fila correspondiente
+            var saldo = $(this).find('.saldo').text();
+
+            // Actualizar el contenido del botón con el saldo correspondiente
+            $('#btn-saldo').text(saldo);
+        });
+    });
+</script>
 </body>
 </html>
