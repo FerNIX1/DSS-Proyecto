@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Menu Cliente</title>
+    <title>Admin</title>
+    @vite("resources/css/style2.css")
 </head>
 <body>
     <div class="container">
@@ -13,7 +14,7 @@
             border-botton">
             <a class="d-flex align-items-center col-md-3 mb-2 mb-md-0 
             text-dark text-decoration-none">
-            <h2>sesion ADMIN</h2>
+            <h2 style="color: white">Sesion ADMIN</h2>
             </a>
         <div class="col-md-3 text-end">
       <button type="button" class="btn btn-outline-primary me-2">  <a href="{{route('logout')}}">Salir</a></button></a>
@@ -98,6 +99,6 @@
                     @endforeach
                 </tbody>
             </table> --}}
-            
+       <br><br><br><br><br><br><br><br><br>     
 </body>
 </html>
