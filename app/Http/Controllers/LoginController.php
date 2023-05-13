@@ -54,7 +54,13 @@ class LoginController extends Controller
     }
 
     public function login(Request $request) {
-        //falta validar
+      
+        //Validacion
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
         $credenciale1 =[
             "email"=>$request->email,
             "password" => $request->password,
@@ -80,6 +86,7 @@ class LoginController extends Controller
             return redirect('login');
         }
     }
+
 
     public function logout(Request $request){
         Auth::logout();

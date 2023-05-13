@@ -13,13 +13,16 @@
 		<a class="navbar-brand" href="#">Banco de Agricultura</a>
 	</nav>
 
+ 
+  
+
   <br><br><br>
     <form method="POST" action="{{route('inicia-sesion')}}">
         @csrf
       
             <div class="form-group">
               <label for="exampleInputEmail1">Correo</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="email">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required >
               
             </div>
             <div class="form-group">
@@ -31,7 +34,5 @@
             </div>
             <button type="submit" class="btn btn-primary">Ingresar</button>
           </form>
-     
-    
 </body>
 </html>
