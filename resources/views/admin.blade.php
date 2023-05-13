@@ -27,35 +27,69 @@
            
 
             {{-- ========================================== --}}
-            <form>
+            <form class="container" method="POST" action="{{route('validar-Usuarios-admin')}}">
+              @csrf 
                 <div class="form-row">
                   <div class="form-group col-md-6">
-                    <label for="inputEmail4">Name</label>
-                    <input type="text" class="form-control" id="inputEmail4" placeholder="Name" name="name">
+                    <label for="inputEmail4">Nombre</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="" name="name">
                   </div>
                   <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
+                    <label for="inputPassword4">Contraseña</label>
                     <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password">
                   </div>
                 </div>
                
                 <div class="form-row">
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-2">
                     <label for="inputfecha">fecha</label>
                     <input type="date" class="form-control" id="inputCity" name="fecha">
                   </div>
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-2">
                     <label for="inputState">Correo</label>
-                    <input type="email" class="form-control" id="inputCity" name="fecha">
+                    <input type="email" class="form-control" id="inputZip"name="email">
                     </select>
                   </div>
                   <div class="form-group col-md-2">
                     <label for="inputZip">Dui</label>
                     <input type="text" class="form-control" id="inputZip" name="dui">
                   </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">Tipo de usuario</label>
+                    <select class="form-select" name="tipousuario" aria-label="Default select example">
+                      <option selected>Elege una opcion</option>
+                      <option value="comun">Comun</option>
+                      <option value="Admin">Admin</option>
+                      <option value="next">Proximamente</option>
+                    </select>
+                  </div>
                 </div>
                
                 <button type="submit" class="btn btn-primary">Agregar</button>
               </form>
+              {{-- =========================================================== --}}
+              {{-- <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>DUI</th>
+                        <th>Tipo de usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($usuarios as $usuario)
+                        <tr>
+                            <td>{{ $usuario->name }}</td>
+                            <td>{{ $usuario->email }}</td>
+                            <td>{{ $usuario->fecha }}</td>
+                            <td>{{ $usuario->dui }}</td>
+                            <td>{{ $usuario->tipousuario }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table> --}}
+            
 </body>
 </html>

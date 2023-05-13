@@ -26,14 +26,15 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($cuentas as $c)
+                @foreach ($cuentas as $cu)
                 <tr>
-                  <td>{{ $c->id }}</td>
-                  <td>{{ $c->TipoDeCuenta }}</td>
-                  <td>{{ $c->monto }}</td>
+                  <td>{{ $cu->id }}</td>
+                  <td>{{ $cu->TipoDeCuenta }}</td>
+                  <td>{{ $cu->monto }}</td>
                 </tr>
                 @endforeach
               </tbody>
+              
             </table>
           </div>
           <div class="col-md-6" style="border: 1px solid #a1a6ad">
@@ -47,12 +48,10 @@
               </thead>
               <tbody>
                 @foreach ($transacciones as $t)
-                  @if ($t->cuenta_id == $c->id)
                   <tr>
-                    <td>{{ $t->tipo }}</td>
                     <td>{{ $t->monto }}</td>
+                    <td>{{ $t->tipo }}</td>
                   </tr>
-                  @endif
                 @endforeach
               </tbody>
             </table>
