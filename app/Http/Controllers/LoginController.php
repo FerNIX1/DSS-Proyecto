@@ -17,7 +17,19 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function register(Request $request){
-        //falta validar
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'fecha' => 'required',
+            'password' => 'required',
+            'dui' => 'required',
+        ],
+            ['name.required' => 'El campo nombre es obligatorio.',
+            'email.required' => 'El campo correo electrónico es obligatorio.',
+            'fecha.required' => 'El campo fecha de nacimiento es obligatorio.',
+            'password.required' => 'El campo contraseña es obligatorio.',
+            'dui.required' => 'El campo DUI es obligatorio.',
+        ]);
 
         $user = new User();
         $user->name =$request->name;

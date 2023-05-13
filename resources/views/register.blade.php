@@ -13,6 +13,17 @@
 		<a class="waves-effect waves-light btn ">Banco de agricultura</a>
 	</div>
   <br><br>
+
+  @if($errors->any())
+  <div class="alert alert-danger" role="alert" style="background-color: #f8d7da; border-color: #f5c6cb; color: #721c24; padding:0.3rem 1.5rem; border-radius: 0.25rem;">
+    <h4 class="alert-heading" style="margin-bottom: 0.75rem;">Error:</h4>
+    <ul style="list-style-type: none; padding-left: 0;">
+        @foreach ($errors->all() as $error)
+            <li><i class="fa fa-times-circle" style="color: #721c24;"></i> {{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
   <form method="POST" action="{{route('validar-registro')}}">
     @csrf
     <div class="mb-3">
@@ -39,5 +50,7 @@
   </form>
     </div>
     <br>
+
+    
 </body>
 </html>
