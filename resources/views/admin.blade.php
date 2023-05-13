@@ -25,7 +25,15 @@
 
             </article>
            
-
+            @if($errors->any())
+      <div class="alert alert-danger" role="alert" style="background-color: #0069d9; border-color: #0069d9; color: white; padding:0.3rem 1.5rem; border-radius: 0.25rem;">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+    @endif
             {{-- ========================================== --}}
             <form class="container" method="POST" action="{{route('validar-Usuarios-admin')}}">
               @csrf 

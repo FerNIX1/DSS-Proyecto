@@ -37,7 +37,6 @@ Route::view('/privada1',"admin")->middleware('auth')->name('admin');
 // Route::view('/privada',"secret")->middleware('auth')->name('admin');
 // ================================================================
 
-
 Route::post('/validar-registro',[LoginController::class,'register'])->name('validar-registro');
 
 Route::post('/inicia-sesion',[LoginController::class,'login'])->name('inicia-sesion');
@@ -53,4 +52,6 @@ Route::post('/guardar-cuenta', [CuentasController::class, 'guardar_cuenta'])->na
 Route::post('/cajero/ingresar-cliente', [CajeroController::class, 'ingresarCliente'])->name('cajero.ingresar-cliente');
 
 Route::post('/validar-Usuarios-admin',[LoginController::class,'registeradmin'])->name('validar-Usuarios-admin');
+
+
 

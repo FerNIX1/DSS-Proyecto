@@ -16,6 +16,7 @@ class NavbarSeeder extends Seeder
                 'route' => 'registro',
                 'ordering' => 1,
             ]
+
            
             ];
 
