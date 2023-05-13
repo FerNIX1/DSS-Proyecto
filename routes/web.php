@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CajeroController;
 use App\Http\Controllers\cuentasController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,7 @@ use App\Http\Controllers\loginController;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('cajero');
 });
 
 
@@ -46,3 +47,8 @@ Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 Route::get('/ver-cuenta/{id}',[cuentasController::class,'vercuenta'])->name('ver-cuenta');
 
 Route::get('/Crearcuenta',[cuentasController::class,'Crear_cuenta'])->name('Crearcuenta');
+
+Route::post('/guardar-cuenta', [CuentasController::class, 'guardar_cuenta'])->name('guardar-cuenta');
+
+Route::post('/cajero/ingresar-cliente', [CajeroController::class, 'ingresarCliente'])->name('cajero.ingresar-cliente');
+
