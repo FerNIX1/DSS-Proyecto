@@ -70,10 +70,14 @@ class LoginController extends Controller
         $user->dui =$request->dui;
         $user->tipousuario =$request->tipousuario;
         $user->save();
+        // $user->all();
+        // $usuarios=User::All();
 
-        Auth::login($user);
+        // Auth::login($user);
+        // dd($usuarios);
 
-        return redirect(route('privada'));
+        // return view('admin')->with('ususarios', $usuarios);
+        return redirect(route('admin'));
         
 
     }

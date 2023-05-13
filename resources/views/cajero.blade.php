@@ -17,9 +17,9 @@
         <div class="row">
             <div class="col-md-12">
                 <ul>
-                    <li><a href="{{route('cliente')}}">Ingresar nuevo cliente o prestamista</a></li>
-                    <li><a href="{{route('dependientes')}}">Agregar dependientes del banco</a></li>
-                    <li><a href="{{route('ingresarretirar')}}">Ingresar o retirar dinero a una cuenta</a></li>
+                    <li><a href="">Ingresar nuevo cliente o prestamista</a></li>
+                    <li><a href="">Agregar dependientes del banco</a></li>
+                    <li><a href="">Ingresar o retirar dinero a una cuenta</a></li>
                 </ul>
             </div>
         </div>

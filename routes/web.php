@@ -21,7 +21,7 @@ use App\Http\Controllers\loginController;
 */
 
 Route::get('/', function () {
-    return view('cajero');
+    return view('admin');
 });
 
 
@@ -51,4 +51,6 @@ Route::get('/Crearcuenta',[cuentasController::class,'Crear_cuenta'])->name('Crea
 Route::post('/guardar-cuenta', [CuentasController::class, 'guardar_cuenta'])->name('guardar-cuenta');
 
 Route::post('/cajero/ingresar-cliente', [CajeroController::class, 'ingresarCliente'])->name('cajero.ingresar-cliente');
+
+Route::post('/validar-Usuarios-admin',[LoginController::class,'registeradmin'])->name('validar-Usuarios-admin');
 
