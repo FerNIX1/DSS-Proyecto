@@ -17,12 +17,22 @@
   
 
   <br><br><br>
+
+    @if($errors->any())
+      <div class="alert alert-danger" role="alert" style="background-color: #2a5298; border-color: #2a5298; color: #c6cfd0; padding:0.3rem 1.5rem; border-radius: 0.25rem;">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div>
+    @endif
     <form method="POST" action="{{route('inicia-sesion')}}">
         @csrf
       
             <div class="form-group">
               <label for="exampleInputEmail1">Correo</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required >
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" name="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" >
               
             </div>
             <div class="form-group">
@@ -35,14 +45,6 @@
             <button type="submit" class="btn btn-primary">Ingresar</button>
           </form>
 
-          @if($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+          
 </body>
 </html>
