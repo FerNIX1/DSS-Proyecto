@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
+use View;
+use App\Models\Navbar;
 
 // =================================================
 use Illuminate\Support\Facades\Schema;
@@ -14,7 +17,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Register any application services.
      */
-    public function register(): void
+    public function register()
     {
         //
     }
@@ -22,8 +25,13 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      */
-    public function boot(): void
+    public function boot()
     {
-        Schema::defaultStringLength(191);
+        Paginator::useBootstrap();
+
+        View::composer('*', function($view){
+            $navbars = Navbar::orderBy('ordering')->get();
+            $view->with('navbars', $navbars);
+        });
     }
 }

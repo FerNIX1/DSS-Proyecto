@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,12 +13,6 @@
     @vite("resources/css/style1.css")
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="#">Banco de Agricultura</a>
-	</nav>
-
- 
-  
 
   <br><br><br>
 
@@ -39,12 +37,12 @@
               <label for="exampleInputPassword1">contraseña</label>
               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" name="password">
             </div>
-            <div>
-                <p>No tienes cuenta? <a href="{{route('registro')}}">Registrarme</a></p>
-            </div>
+            
             <button type="submit" class="btn btn-primary">Ingresar</button>
           </form>
 
           
 </body>
 </html>
+
+@endsection

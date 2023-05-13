@@ -10,7 +10,7 @@
 </head>
 <body>
   <div id="barra">
-		<a class="waves-effect waves-light btn ">Banco de agricultura</a>
+		<a class="waves-effect waves-light btn " href="{{route('login')}}">Banco de agricultura</a>
 	</div>
   <br><br>
 
