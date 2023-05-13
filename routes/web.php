@@ -44,3 +44,5 @@ Route::post('/inicia-sesion',[LoginController::class,'login'])->name('inicia-ses
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::get('/ver-cuenta/{id}',[cuentasController::class,'vercuenta'])->name('ver-cuenta');
+
+Route::get('/Crearcuenta',[cuentasController::class,'Crear_cuenta'])->name('Crearcuenta');
